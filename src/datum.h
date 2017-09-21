@@ -76,7 +76,7 @@ public:
     template <class T>
     Datum(const std::map<std::string, T>& map) : type(Type::OBJECT), value(Object()) {
         for (const auto& it : map) {
-            value.object.emplace(it.left, Datum(it.right));
+            value.object.emplace(it->left, Datum(it->right));
         }
     }
 
