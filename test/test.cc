@@ -89,7 +89,7 @@ int main() {
     signal(SIGPIPE, SIG_IGN);
     srand(time(NULL));
     try {
-        conn = R::connect();
+        conn = R::connect("172.16.0.65", 28015);
     } catch(const R::Error& error) {
         printf("FAILURE: could not connect to localhost:28015: %s\n", error.message.c_str());
         return 1;
